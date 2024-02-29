@@ -44,7 +44,12 @@
         echo 'il valore di $i ' . " è $i e corrisponde a  $frutti[$i] <br>"; 
     }
 
-
+    echo "<ul>";
+    foreach ($allievo as $chiave => $valore) {
+        echo "<li><strong>$chiave</strong>: $valore<li>";
+    }
+    echo "</ul>";
+    
     ?>
 </body>
 </html>
