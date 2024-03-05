@@ -23,3 +23,7 @@
 
 **nota:**
 > la  prossima volta facciamo la classe
+
+
+- funzione array_to_ul
+- 
