@@ -29,15 +29,22 @@ function scarica_pagina(string $parola,string $cartella):array {
  * @param array $percorsi percorsi delle pagine scaricate
  * @return string $html Stinga che rappresenta ul elenco non ordinato in HTML (ul/li)
  */
-
-/** 
- * NON USARE ECHO DENTRO LA FUNZIONE
- */
- function elenco_pagine($percorsi){
-
+ function elenco_pagine(array $percorsi):string {
+    $html = '<ul>';
+    
+    foreach ($percorsi as $percorso) {
+        // // ucfirst() uc
+        $solo_nome = basename($percorso,".html");
+        $nome_con_maiuscola = ucfirst($solo_nome);
+        $html .= "<li><a href='$percorso'>" . $nome_con_maiuscola . "</a></li>";
+        
+        // $html .= "<li>" . ucfirst(basename($percorso)) . "</li>";
+    }
+    $html .= "</ul>";
 
     return $html;
  }
 
+ 
 
 

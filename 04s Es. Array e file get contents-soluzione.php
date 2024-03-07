@@ -25,8 +25,9 @@ include "./lib/googletools.php";
         // array_push($percorsi_pagine_salvate,$percorso_pagina_salvata);
         $percorsi_pagine_salvate[] = $percorso_pagina_salvata;
     }  
-        
-    print_r($percorsi_pagine_salvate);
+      
+    echo elenco_pagine($percorsi_pagine_salvate);
+    // print_r($percorsi_pagine_salvate);
     
 
 ?>
