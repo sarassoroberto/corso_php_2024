@@ -1,6 +1,6 @@
 Antonina Efimova
 Elisabetta Mirone
-Randy Harold Beni *
+Randy Harold Beni
 Bruno Alicata
 Gianluca Contu
 Lara Santoro
