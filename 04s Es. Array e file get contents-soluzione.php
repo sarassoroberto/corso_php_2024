@@ -1,4 +1,5 @@
-<?php 
+<?php
+//  porta una porzione di codice esterna dentro questo script
 include "./lib/googletools.php"; 
 ?>
 <!DOCTYPE html>
@@ -10,17 +11,21 @@ include "./lib/googletools.php";
 </head>
 <body>
 <?php 
+    // Parole da scaricare 
     $animali = ['panda','lince','tasso'];
 
    
     $percorsi_pagine_salvate = [];
     foreach ($animali as  $animale) {
         $r = scarica_pagina($animale,"./download/animali/");
-      $percorso_pagina_salvata = $r['percorso'];
-      // inserisco nuovi valori dentro array $percos
-      $percorsi_pagine_salvate[] = $percorso_pagina_salvata;
-    }
-
+        $percorso_pagina_salvata = $r['percorso'];
+        // inserisco nuovi valori dentro array $percos
+        // array.push()
+        
+        // array_push($percorsi_pagine_salvate,$percorso_pagina_salvata);
+        $percorsi_pagine_salvate[] = $percorso_pagina_salvata;
+    }  
+        
     print_r($percorsi_pagine_salvate);
     
 
