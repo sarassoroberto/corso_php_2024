@@ -26,8 +26,18 @@ function scarica_pagina(string $parola,string $cartella):array {
 }
 
 /**
- * 
+ * @param array $percorsi percorsi delle pagine scaricate
+ * @return string $html Stinga che rappresenta ul elenco non ordinato in HTML (ul/li)
  */
+
+/** 
+ * NON USARE ECHO DENTRO LA FUNZIONE
+ */
+ function elenco_pagine($percorsi){
+
+
+    return $html;
+ }
 
 
 
