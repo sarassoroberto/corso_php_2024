@@ -20,10 +20,10 @@
 - foreach
 - for
 
+## funzioni per manipolare i percorsi
 
-**nota:**
-> la  prossima volta facciamo la classe
+- basename
+- dirname
 
 
-- funzione array_to_ul
-- 
+## Solizione esercizio Array Di Array
