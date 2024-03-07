@@ -2,8 +2,11 @@
 /**
  * @param string $parola parola da cercare e nome della pagiina che verrà salvata
  * @param string $cartella percorso del file system dove verranno salvate le  pagine metti lo "/"
+ * @return array $risultato un array associativo con due chiavi 
+ *                  - percorso: la pagina scaricata sul server
+ *                  - pagina: il contenuto della pagina scaricata
  */
-function scarica_pagina(string $parola,string $cartella) {
+function scarica_pagina(string $parola,string $cartella):array {
     $url =  "https://www.google.com/search?q=$parola&oq=$parola&gs_lcrp=EgZjaHJvbWUqDAgAECMYJxiABBiKBTIMCAAQIxgnGIAEGIoFMg0IARAuGIMBGLEDGIAEMg0IAhAuGIMBGLEDGIAEMhAIAxAuGK8BGMcBGLEDGIAEMg0IBBAuGK8BGMcBGIAEMg8IBRAuGAoYxwEY0QMYgAQyBwgGEAAYgAQyBwgHEAAYgAQyBwgIEAAYjwIyBwgJEAAYjwLSAQgxMjU2ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8";
     $pagina = file_get_contents($url);
     
@@ -16,10 +19,15 @@ function scarica_pagina(string $parola,string $cartella) {
 
     $risultato = [
         'percorso' => $cartella.$parola.".html",
-        'pagina' => $pagina
-    ];
+        'pagina' => $pagina,
+     ];
 
     return $risultato;
 }
+
+/**
+ * 
+ */
+
 
 
