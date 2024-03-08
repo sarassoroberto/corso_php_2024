@@ -26,4 +26,4 @@
 - dirname
 
 
-## Solizione esercizio Array Di Array
+## Soluzione esercizio classe (Array Di Array) 
