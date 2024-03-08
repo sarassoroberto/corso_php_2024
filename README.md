@@ -27,3 +27,11 @@
 
 
 ## Soluzione esercizio classe (Array Di Array) 
+
+
+## Siti / Repository  con dati in formato json
+
+[Taboo][https://github.com/Acciaccatura/taboo-game/blob/master/cards.json]
+[Regioni Italiane][https://github.com/dakk/Italia.json/blob/master/italia.json]
+[FONDAZIONE TORINO MUSEI][https://www.fondazionetorinomusei.it/it/servizi/open-data/]
+  - [gam][https://gestione.fondazionetorinomusei.it/media/opendata/COLLEZIONI_GAM.json]
