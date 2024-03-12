@@ -33,9 +33,9 @@
 
 - ripassare come si legge un json
 
-[API TRIVIA][https://opentdb.com/api_config.php];
+[API TRIVIA](https://opentdb.com/api_config.php)
   - Qgnuno prende le carte che vuole
-[Taboo][https://github.com/Acciaccatura/taboo-game/blob/master/cards.json]
-[Regioni Italiane][https://github.com/dakk/Italia.json/blob/master/italia.json]
-[FONDAZIONE TORINO MUSEI][https://www.fondazionetorinomusei.it/it/servizi/open-data/]
-  - [gam][https://gestione.fondazionetorinomusei.it/media/opendata/COLLEZIONI_GAM.json]
+[Taboo](https://github.com/Acciaccatura/taboo-game/blob/master/cards.json)
+[Regioni Italiane](https://github.com/dakk/Italia.json/blob/master/italia.json)
+[FONDAZIONE TORINO MUSEI](https://www.fondazionetorinomusei.it/it/servizi/open-data/)
+  - [gam](https://gestione.fondazionetorinomusei.it/media/opendata/COLLEZIONI_GAM.json)
