@@ -1,0 +1,125 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Video Games",
+            "question": "Which of these is NOT a terrorist faction in Counter-Strike (2000)?",
+            "correct_answer": "Midwest Militia",
+            "incorrect_answers": [
+                "Phoenix Connection",
+                "Elite Crew",
+                "Guerrilla Warfare"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Geography",
+            "question": "The following Spanish provinces are located in the northern area of Spain except:",
+            "correct_answer": "Murcia",
+            "incorrect_answers": [
+                "Asturias",
+                "Navarre",
+                "Le&oacute;n"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Science: Computers",
+            "question": "In programming, the ternary operator is mostly defined with what symbol(s)?",
+            "correct_answer": "?:",
+            "incorrect_answers": [
+                "??",
+                "if then",
+                "?"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Video Games",
+            "question": "According to Overwatch&#039;s lore, who was once a member of the Deadlock Gang?",
+            "correct_answer": "McCree",
+            "incorrect_answers": [
+                "Roadhog",
+                "Soldier 76",
+                "Junkrat"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Video Games",
+            "question": "Who is the English voice actor for Sora from the Kingdom Hearts series?",
+            "correct_answer": "Haley Joel Osment",
+            "incorrect_answers": [
+                "K\u014dki Uchiyama",
+                "Jesse McCartney",
+                "Miyu Irino"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Science &amp; Nature",
+            "question": "How old is the universe?",
+            "correct_answer": "13.8 Billion Years",
+            "incorrect_answers": [
+                "4.5 Billion Years",
+                "7.9 Billion Years",
+                "16.2 Billion Years"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Entertainment: Music",
+            "question": "Which M83 album is the song &quot;Midnight City&quot; featured in?",
+            "correct_answer": "Hurry Up, We&#039;re Dreaming",
+            "incorrect_answers": [
+                "Saturdays = Youth",
+                "Before the Dawn Heals Us",
+                "Junk"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Board Games",
+            "question": "How many dice are used in the game of Yahtzee?",
+            "correct_answer": "Five",
+            "incorrect_answers": [
+                "Four",
+                "Six",
+                "Eight"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Music",
+            "question": "In which year was the Megadeth album &quot;Peace Sells... but Who&#039;s Buying?&quot; released?",
+            "correct_answer": "1986",
+            "incorrect_answers": [
+                "1979",
+                "1987",
+                "1983"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Science: Gadgets",
+            "question": "What does GPS stand for?",
+            "correct_answer": "Global Positioning System",
+            "incorrect_answers": [
+                "Global Personal System",
+                "General Positioning System",
+                "General Personal Satellite"
+            ]
+        }
+    ]
+}

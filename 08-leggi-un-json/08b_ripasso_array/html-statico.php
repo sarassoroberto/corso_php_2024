@@ -1,4 +1,5 @@
 <?php
+
 $students = array(
     array(
         "first_name" => "John", 
