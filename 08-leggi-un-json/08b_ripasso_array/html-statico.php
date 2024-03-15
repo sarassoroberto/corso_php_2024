@@ -29,7 +29,7 @@ $students = array(
       <style>
          .student {
          width: 200px;
-         height: 100px;
+         height: 200px;
          margin: 20px;
          padding: 10px;
          border: 2px solid black;
@@ -37,6 +37,11 @@ $students = array(
          text-align: center;
          display: inline-block;
          }
+
+        p.favorite_color {
+    
+            height: 40px;
+        }
       </style>
    </head>
    <body >
@@ -47,10 +52,20 @@ $students = array(
             <?php  
             $label = $student['first_name']." ".$student['last_name'];  
             $favorite_color = $student['favorite_color'];
+            $hobbies = $student['hobbies'];
             ?>
             <div class="student" style="background-color: <?= $favorite_color ?>;">
                 <p><?= $label ?></p>
-                <p>il mio colore preferito è <?= $favorite_color ?></p>
+                <p class="favorite_color">il mio colore preferito è <br>
+                <?= $favorite_color ?></p>
+                <ul class="hobbies">
+                   <?php foreach ($hobbies as $key => $hobby) { ?>
+                   
+                    <li> <?= $hobby ?> </li>
+                    
+                   <?php } ?>
+                   
+                </ul>
             </div>
         <?php } ?>
 
