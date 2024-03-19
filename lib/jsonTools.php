@@ -7,11 +7,22 @@
  getJson("https://opentdb.com/api.php?amount=10");
  */
 
-function getJson(string $source, $cache = false){
+
+/**
+ * @param $source  il percorso di un file in formato json
+ *        o url o una risorsa (resources)
+ */
+function getJson(string $source, $cache = false) {
     
     # CREA CARTELLA 
     if($cache && is_string($cache)){
-        $directory = __DIR__.dirname($cache); 
+
+        /** 
+        /download/file.json --> download/file.json  
+        download/file.json --> download/file.json
+        */
+        $cache = trim($cache,"/");
+        $directory = __DIR__."/".dirname($cache); 
         // die();
         if(!file_exists($directory)){
             mkdir($directory,0777,true);

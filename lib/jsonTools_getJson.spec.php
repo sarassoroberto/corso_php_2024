@@ -18,7 +18,7 @@ echo "\nCASO con  CACHE";
      echo "\nil file non è stato creato";
      echo "\n".__FILE__.":".__LINE__;
  }
-// getJson("https://opentdb.com/api.php?amount=10","cache/trivia.json");
+getJson("https://opentdb.com/api.php?amount=10","cache/trivia.json");
 
  // la mia funzione deve restituire un array
  if(!is_array($result)) {
@@ -38,3 +38,5 @@ echo "\nCASO con  CACHE";
     var_dump($result);
     echo "\n".__FILE__.":".__LINE__;
 }
+
+
