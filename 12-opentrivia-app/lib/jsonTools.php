@@ -23,12 +23,14 @@ function getJson(string $source, $cache = false) {
         */
         $cache = trim($cache,"/");
         $directory = __DIR__."/".dirname($cache); 
-        // die();
         if(!file_exists($directory)){
             mkdir($directory,0777,true);
         }
-    }
+        
 
+    }
+    // $cache = $directory."/".basename($cache);
+    
     if($cache && file_exists($cache)){
         $content = file_get_contents($cache);
     }else{
