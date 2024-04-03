@@ -1,12 +1,12 @@
 <?php
 require_once "./lib/jsonTools.php";
 $difficulty = [
-    "Qualsiasi" => "any",
+    // "Qualsiasi" => "",
     "Facile" => "easy",
     "Media" => "medium",
     "Difficile" =>"hard"
 ];
-
+ 
 # Endpoind  per ottenere la risorsa category
 $response = getJson("https://opentdb.com/api_category.php");
 $categories = $response['trivia_categories'];
@@ -59,12 +59,14 @@ $categories = $response['trivia_categories'];
                            max="20" 
                            name="amount"
                            >
+                           <!-- required -->
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label" for="difficulty">Difficoltà</label>
                     <!-- UL -->
                     <select  id="difficulty" name="difficulty" class="form-select">
+                        <option value=''>Qualsiasi</option>
                         <?php foreach ($difficulty as $user_label => $difficulty_level) { ?>
                             <option value="<?= $difficulty_level ?>">
                                 <?= $user_label ?>

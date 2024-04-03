@@ -1,0 +1,37 @@
+@startuml
+
+CardQuestion <-- CardQuestionMultiple 
+CardQuestion <-- CardQuestionBoolean 
+' CardQuestion <-- CardQuestionSurvey
+' Game *--- CardQuestion
+
+abstract CardQuestion {
+    - string type
+    - string category
+    - string question
+    - string difficulty
+    - string point
+    + CardQuestion(array data)
+    + showQuestion()
+    + abstract showAnswers() 
+}
+
+class CardQuestionMultiple {
+
+    - string correct_answer
+    - array  incorrect_answers
+} 
+
+class CardQuestionBoolean {
+
+    - bool correct_answer
+   
+} 
+
+' class CardQuestionSurvey {
+
+'     ' + Survey survey_service
+   
+' } 
+
+@enduml
