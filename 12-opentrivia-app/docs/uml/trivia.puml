@@ -14,19 +14,22 @@ abstract CardQuestion {
     + CardQuestion(array data)
     + showQuestion()
     + abstract showAnswers() 
+    + abstract isCorrect($user_response) 
 }
 
 class CardQuestionMultiple {
-
+    ' - string user_response
     - string correct_answer
     - array  incorrect_answers
 } 
 
 class CardQuestionBoolean {
-
+    ' - bool user_response
     - bool correct_answer
    
 } 
+
+
 
 ' class CardQuestionSurvey {
 
