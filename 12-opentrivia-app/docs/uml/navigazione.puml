@@ -1,0 +1,39 @@
+@startuml
+
+"login  Utente" -- "Nuova Partita"
+"Nuova Partita" -- "Partita"
+"login  Utente" -- "Classifica"
+
+"login  Utente" -- "Profilo"
+
+"login  Utente" -right- "registra Utente"
+
+' "login  Utente" -- "Nuova Partita"
+
+class "Nuova Partita" {
+    nuova_partita.php
+    form_creazione_partita
+}
+class "Partita" {
+    partita.php
+    visualizza_carte
+}
+class "Classifica" {
+    classifica.php
+    tabella_punteggi
+}
+class "registra Utente" {
+    registrazione.php
+}
+
+class "login  Utente" {
+    login.php
+}
+
+class "Profilo" {
+    profilo.php
+    tabella_punteggi
+}
+ 
+
+@enduml

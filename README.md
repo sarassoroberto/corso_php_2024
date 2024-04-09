@@ -39,3 +39,10 @@
 [Regioni Italiane](https://github.com/dakk/Italia.json/blob/master/italia.json)
 [FONDAZIONE TORINO MUSEI](https://www.fondazionetorinomusei.it/it/servizi/open-data/)
   - [gam](https://gestione.fondazionetorinomusei.it/media/opendata/COLLEZIONI_GAM.json)
+
+
+
+
+DESIGN PATTERN 
+
+https://www.html.it/pag/370900/il-pattern-mvc-model-view-controller/

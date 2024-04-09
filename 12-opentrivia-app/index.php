@@ -8,12 +8,16 @@ $difficulty = [
 ];
  
 # Endpoind  per ottenere la risorsa category
+
+// Model
 $response = getJson("https://opentdb.com/api_category.php");
 $categories = $response['trivia_categories'];
 // print_r($categories);
 
 //  https://opentdb.com/api_category.php
 ?>
+
+<!-- VIEW -->
 <!DOCTYPE html>
 <html lang="en">
 

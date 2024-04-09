@@ -24,8 +24,13 @@ if(!$amount){
 # Veriabili Superglobali
 // print_r($_POST);
 
+# MODEL
+
 // https://opentdb.com/api.php?category=&difficulty=hard&amount=10
 $url = "https://opentdb.com/api.php?". http_build_query($_POST);
 // echo $url;die();
+
 $response = getJson($url);
+
+
 print_r($response);
