@@ -4,26 +4,30 @@
             <div class="col"></div>
             <div class="col">
                 <form action="#" method="POST">
-                    <div>
-                        <label for="nome">Nome</label>
-                        <input type="text" name="nome" required="true" id="nome">
+                    <div class="mb-3">
+                        <label class="form-label" for="nome">Nome</label>
+                        <input class="form-control" type="text" name="nome" required="true" id="nome">
                     </div>
-                    <div>
-                        <label for="cognome">Cognome</label>
-                        <input type="text" name="cognome" required=true  id="cognome">
+                    <div class="mb-3">
+                        <label class="form-label" for="cognome">Cognome</label>
+                        <input class="form-control" type="text" name="cognome" required=true  id="cognome">
                     </div>
-                    <div>
-                        <label for="email">Email</label>
-                        <input type="email" name="email" required id="email">
+                    <div class="mb-3">
+                        <label class="form-label" for="email">Email</label>
+                        <input class="form-control" type="email" name="email" required id="email">
                     </div>
 
-                    <div>
-                        <label for="password">Password</label>
-                        <input type="password" name="password" required id="password">
+                    <div class="mb-3">
+                        <label class="form-label" for="password">Password</label>
+                        <input class="form-control" type="password" name="password" required id="password">
+                    </div>
+                    <div class="mt-3">
+                        <button class="btn btn-primary" type="submit">invia</button>
                     </div>
                     <div>
-                  
-                        <button type="submit">invia</button>
+                        <p>
+                            Hai già un account ? <a href="index.php">Accedi</a>
+                        </p>
                     </div>
                 </form>
             </div>
