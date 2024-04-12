@@ -12,4 +12,5 @@ $user->email = "lr@email.com";
 
 $crud = new UserCRUD;
 
-$crud->create($user);
+// $crud->create($user);
+$crud->readOne(1);

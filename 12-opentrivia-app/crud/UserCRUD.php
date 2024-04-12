@@ -34,7 +34,7 @@ class UserCRUD {
         $sql = "INSERT INTO user (nome,cognome,email,password) VALUES 
                 (:nome,:cognome,:email,:password)";
         $stm = $this->pdo->prepare($sql);
-        $stm->bindValue(':nome',$user->nome);
+        $stm->bindValue(':nome',$user->nome,\PDO::PARAM_STR);
         $stm->bindValue(':cognome',$user->cognome);
         $stm->bindValue(':email',$user->email);
         $stm->bindValue(':password',md5($user->password));
@@ -42,7 +42,13 @@ class UserCRUD {
     }
 
     public function readOne(int $user_id):User {
+        $sql = "SELECT * FROM user WHERE user_id = :user_id;";
+        $stm = $this->pdo->prepare($sql);
+        $stm->bindValue(':user_id',$user_id,\PDO::PARAM_INT);
+        $stm->execute();
 
+        $user = $stm->fetchAll(\PDO::FETCH_CLASS,"model\User")[0];
+        return $user;
     }
 
     public function readAll() : array {
