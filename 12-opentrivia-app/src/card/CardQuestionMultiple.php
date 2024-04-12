@@ -1,5 +1,5 @@
 <?php 
-
+namespace src\card;
 class CardQuestionMultiple extends CardQuestion {
     private $correct_answer;
     private $incorrect_answers;

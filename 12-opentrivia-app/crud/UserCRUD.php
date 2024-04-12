@@ -1,16 +1,24 @@
 <?php 
-
+namespace crud;
+use model\User;
 class UserCRUD {
 
     private $pdo;
     public function __construct() {
+        /**
+         * id20599242_trivia_production
+           id20599242_trivia
+           1Password@
+         */
+
+         
         try {
-            $dsn = 'mysql:dbname=trivia_staging;host=127.0.0.1';
-            $user = 'root';
-            $password = 'a';
+            $dsn = 'mysql:dbname='.\Config::DB_NAME.';host='.\Config::DB_HOST;
+            $user = \Config::DB_USER;
+            $password = \Config::DB_PASSWORD;
             // Connnessione
-            $this->pdo = new PDO($dsn, $user, $password);  //code...
-        } catch (PDOException $th) {
+            $this->pdo = new \PDO($dsn, $user, $password);  //code...
+        } catch (\PDOException $th) {
 
              throw $th;
         

@@ -1,5 +1,5 @@
 <?php
-
+namespace src\card;
 abstract class CardQuestion {
     protected $type;
     protected $question;

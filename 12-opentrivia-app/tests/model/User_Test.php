@@ -1,5 +1,8 @@
 <?php 
 
+use crud\UserCRUD;
+use model\User;
+
 
 $userCrud = new UserCRUD();
 

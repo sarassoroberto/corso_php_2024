@@ -1,5 +1,7 @@
 <?php 
-class User extends Model{
+// namespace rispondituttogame;
+namespace model; // model/User
+class User {
 
     public $nome;
     public $cognome;
