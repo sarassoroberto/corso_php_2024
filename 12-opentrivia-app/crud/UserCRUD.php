@@ -36,12 +36,15 @@ class UserCRUD {
         // 1. QUERY
         $sql = "INSERT INTO user (nome,cognome,email,password) VALUES 
                 (:nome,:cognome,:email,:password)";
+        
         $stm = $this->pdo->prepare($sql);
         $stm->bindValue(':nome',$user->nome,\PDO::PARAM_STR);
         $stm->bindValue(':cognome',$user->cognome);
         $stm->bindValue(':email',$user->email);
         $stm->bindValue(':password',md5($user->password));
         $stm->execute();
+       
+        return  $this->pdo->lastInsertId();
     }
 
     public function readOne(int $user_id):User {
@@ -86,9 +89,12 @@ class UserCRUD {
     }
 
     public function update(User $user) {
+
+        // print_r($user);die();
+
         $sql="UPDATE user SET nome = :nome, 
-                     cognome = :cognome, 
-                     email = :email, 
+                              email = :email,
+                              cognome = :cognome 
               WHERE user_id = :user_id;";
         $stm = $this->pdo->prepare($sql);
         $stm->bindValue(':nome',$user->nome,\PDO::PARAM_STR);
