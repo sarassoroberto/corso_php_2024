@@ -12,5 +12,9 @@ $user->email = "lr@email.com";
 
 $crud = new UserCRUD;
 
-// $crud->create($user);
-$crud->readOne(1);
+$crud->create($user);
+// SPEGNERE IL PC
+
+$user_da_database = $crud->findByMail($user->email);
+$crud->delete($user_da_database->user_id);
+

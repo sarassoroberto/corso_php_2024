@@ -66,6 +66,15 @@ class UserCRUD {
         return $risultato;
     }
 
+    public function findByMail($email){
+        $sql = "select * from user where email=:email;";
+        $stm = $this->pdo->prepare($sql);
+        $stm->bindValue(':email',$email);
+        $stm->execute();
+        $result = $stm->fetchAll(\PDO::FETCH_CLASS,User::class);
+        return $result[0];
+    }
+
     public function delete(int $user_id) {
         $sql = "DELETE from user WHERE user_id = :user_id;";
         $stm = $this->pdo->prepare($sql);
@@ -84,7 +93,7 @@ class UserCRUD {
         $stm->bindValue(':email',$user->email);
         $stm->bindValue(':user_id',$user->user_id);
         $stm->execute();
-        
+
     }
 
 }
