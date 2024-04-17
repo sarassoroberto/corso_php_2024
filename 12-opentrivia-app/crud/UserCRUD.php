@@ -78,7 +78,13 @@ class UserCRUD {
         $stm->bindValue(':email',$email);
         $stm->execute();
         $result = $stm->fetchAll(\PDO::FETCH_CLASS,User::class);
-        return $result[0];
+        
+        if(count($result) == 0){
+            throw new \Exception("Utente non trovato", 666);
+        }elseif (count($result) == 1) {
+            # code...
+            return $result[0];
+        }
     }
 
     public function delete(int $user_id) {
