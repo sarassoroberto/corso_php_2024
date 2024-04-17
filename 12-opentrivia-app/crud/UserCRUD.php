@@ -1,8 +1,11 @@
 <?php 
 namespace crud;
 use model\User;
+
+
 class UserCRUD {
 
+   
     private $pdo;
     public function __construct() {
         /**
@@ -51,17 +54,37 @@ class UserCRUD {
         return $user;
     }
 
+ 
+
     public function readAll() : array {
-        // TODO
+        $sql = "SELECT * FROM user;";
+        $stm = $this->pdo->prepare($sql);
+        $stm->execute();
+
+        // $stm->fetchAll(\PDO::FETCH_ASSOC);
+        $risultato = $stm->fetchAll(\PDO::FETCH_CLASS,User::class);
+        return $risultato;
     }
 
     public function delete(int $user_id) {
-        // TODO
+        $sql = "DELETE from user WHERE user_id = :user_id;";
+        $stm = $this->pdo->prepare($sql);
+        $stm->bindValue(':user_id',$user_id,\PDO::PARAM_INT);
+        $stm->execute();
     }
 
     public function update(User $user) {
-        // TODO
-        $sql = ".... where ";
+        $sql="UPDATE user SET nome = :nome, 
+                     cognome = :cognome, 
+                     email = :email, 
+              WHERE user_id = :user_id;";
+        $stm = $this->pdo->prepare($sql);
+        $stm->bindValue(':nome',$user->nome,\PDO::PARAM_STR);
+        $stm->bindValue(':cognome',$user->cognome);
+        $stm->bindValue(':email',$user->email);
+        $stm->bindValue(':user_id',$user->user_id);
+        $stm->execute();
+        
     }
 
 }
