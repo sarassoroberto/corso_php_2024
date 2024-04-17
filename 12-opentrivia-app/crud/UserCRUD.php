@@ -51,6 +51,9 @@ class UserCRUD {
         $stm->execute();
 
         $user = $stm->fetchAll(\PDO::FETCH_CLASS,"model\User")[0];
+        // $user = $stm->fetchAll(\PDO::FETCH_FUNC,function($nome,$cognome,$email){
+        //             return new User($no)
+        // })[0];
         return $user;
     }
 
