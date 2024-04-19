@@ -1,9 +1,23 @@
-<?php require_once "./view/header.php" ?>
-    <div class="container">
+<?php 
+use crud\UserCRUD;
+require_once "./view/header.php" 
+
+?>
+
+<?php 
+    print_r($_SERVER['REQUEST_METHOD']);
+    if($_SERVER['REQUEST_METHOD'] == 'GET'){
+        echo "Benvenuto compila il form";
+    }
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        echo "controllo i dati e li salvo";
+    } 
+?>
+<div class="container">
         <div class="row">
             <div class="col"></div>
             <div class="col">
-                <form action="#" method="POST">
+                <form action="registrazione.php" method="POST">
                     <div class="mb-3">
                         <label class="form-label" for="nome">Nome</label>
                         <input class="form-control" type="text" name="nome" required="true" id="nome">

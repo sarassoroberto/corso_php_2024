@@ -1,7 +1,8 @@
 {
     "response_code": 0,
     "results": [
-        {
+        {   
+            
             "type": "multiple",
             "difficulty": "easy",
             "category": "Science &amp; Nature",
@@ -11,7 +12,8 @@
                 "Neon",
                 "Argon",
                 "Krypton"
-            ]
+            ],
+            "user_answers":"Argon"
         },
         {
             "type": "multiple",

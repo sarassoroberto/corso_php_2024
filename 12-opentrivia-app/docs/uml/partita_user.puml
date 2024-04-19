@@ -1,0 +1,30 @@
+@startuml
+
+User -left-{ Partita 
+Mazzo -right-{ Partita
+
+class User <<model>>{
+    nome
+    cognome
+    email
+    password
+}
+
+class Mazzo <<model>>{
+    id:int
+    carte:JSON
+}
+
+class Partita <<model>>{
+    mazzo_id
+    user_id
+    data_partita
+    risposte:JSON
+    domandeCorrette() 
+    domandeSbagliate() 
+}
+
+
+
+
+@enduml
