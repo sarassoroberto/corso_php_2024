@@ -31,6 +31,4 @@ $url = "https://opentdb.com/api.php?". http_build_query($_POST);
 // echo $url;die();
 
 $response = getJson($url);
-
-
 print_r($response);
