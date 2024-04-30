@@ -1,6 +1,8 @@
 <?php
 namespace crud;
+use model\Mazzo;
 use model\User;
+use src\card\CardQuestionMultiple;
 
 class MazzoCRUD
 {
@@ -46,7 +48,8 @@ class MazzoCRUD
         $sql = "SELECT * FROM mazzo";
         $stm = $this->pdo->prepare($sql);
         $stm->execute();
-        $stm->fetchAll(\PDO::FETCH_CLASS,MazzoCRUD::class);
+        $all = $stm->fetchAll(\PDO::FETCH_CLASS,Mazzo::class);
+        return $all;
     }
 
 
