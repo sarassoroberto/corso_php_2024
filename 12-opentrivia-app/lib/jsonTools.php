@@ -39,7 +39,7 @@ function getJson(string $source, $cache = false) {
             file_put_contents($cache,$content);
         }
     }
-    // return ($content);
+    
     return json_decode($content,true);
 
         // se cache  devo aprire la il file cache 

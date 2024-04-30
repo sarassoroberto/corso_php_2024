@@ -22,14 +22,14 @@ class MazzoCRUD
 
     public function create($query_string)
     {
-        $url = "https://opentdb.com/api.php?" . http_build_query($query_string);
+        $url = \Config::API_OPEN_TRIVIA_ENDPOINT . http_build_query($query_string);
         $response = getJson($url);
         $carte = json_encode($response);
         $sql = "INSERT INTO mazzo (carte) VALUES (:carte)";
         $stm = $this->pdo->prepare($sql);
         $stm->bindValue(':carte', $carte);
         $stm->execute();
-        return $this->pdo->lastInsertId();
+        return (int) $this->pdo->lastInsertId();
     }
 
     public function readOne(int $mazzo_id)
@@ -46,7 +46,7 @@ class MazzoCRUD
         $sql = "SELECT * FROM mazzo";
         $stm = $this->pdo->prepare($sql);
         $stm->execute();
-        return $stm->fetchAll(\PDO::FETCH_CLASS,);
+        $stm->fetchAll(\PDO::FETCH_CLASS,MazzoCRUD::class);
     }
 
 
