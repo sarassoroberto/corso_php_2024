@@ -1,6 +1,10 @@
 <?php
+require_once "autoload.php";
+require_once "lib/jsonTools.php";
+use model\Mazzo;
+use crud\MazzoCRUD;
 
-$mazzoCrud = new Mazzo
+$mazzoCrud = new MazzoCrud;
 
 $form_simulato = [
     'amount' => 10,
