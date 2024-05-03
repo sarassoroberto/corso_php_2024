@@ -6,4 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Test\\DevCoder\\Validator\\' => array($vendorDir . '/devcoder-xyz/php-validator/tests'),
+    'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
+    'DevCoder\\Validator\\' => array($vendorDir . '/devcoder-xyz/php-validator/src'),
 );

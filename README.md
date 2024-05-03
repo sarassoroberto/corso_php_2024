@@ -1,6 +1,27 @@
 # Corso di PHP
 
 
+## Gestione Utenti 
+
+1. completare form di registrazione [completare-form-di-registrazione]
+
+12-opentrivia-app\registrazione.php
+```php
+    print_r($_SERVER['REQUEST_METHOD']);
+    if($_SERVER['REQUEST_METHOD'] == 'GET'){
+        echo "Benvenuto compila il form";
+    }
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        echo "controllo i dati e li salvo";
+    } 
+```
+
+
+
+
+
+
+
 ## Lezione del 29/02/2024
 
 
