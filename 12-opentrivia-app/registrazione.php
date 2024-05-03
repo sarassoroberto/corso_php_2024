@@ -1,4 +1,5 @@
 <?php 
+session_start();
 require_once "vendor/autoload.php";
 require_once "autoload.php";
 
@@ -62,19 +63,23 @@ require_once "./view/header.php"
                     <div class="mb-3">
                         <label class="form-label" for="nome">Nome</label>
                         <input class="form-control" type="text" name="nome"  id="nome">
+                        <div>  messaggio di errore che LA LIBRERIA </div>    
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="cognome">Cognome</label>
                         <input class="form-control" type="text" name="cognome"   id="cognome">
+                        <div>  messaggio di errore che LA LIBRERIA </div>  
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="email">Email</label>
                         <input class="form-control" type="text" name="email"  id="email">
+                        <div>  messaggio di errore che LA LIBRERIA </div>  
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label" for="password">Password</label>
                         <input class="form-control" type="password" name="password"  id="password">
+                        <div>  messaggio di errore che LA LIBRERIA </div>  
                     </div>
                     <div class="mt-3">
                         <button class="btn btn-primary" type="submit">invia</button>
