@@ -2,6 +2,7 @@
 require_once "vendor/autoload.php";
 require_once "autoload.php";
 
+
 use crud\UserCRUD;
 use DevCoder\Validator\Assert\Email;
 use DevCoder\Validator\Assert\StringLength;
@@ -24,6 +25,8 @@ require_once "./view/header.php"
         // die();
         # User::regstrationValidate();
 
+        // Validation orchestra tutta la validazione
+        #  Stabilito le regole di validazione
         $validation = new Validation([
             'nome' => [(new StringLength())->min(3)],
             'cognome' => [(new StringLength())->min(3)],
