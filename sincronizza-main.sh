@@ -18,3 +18,6 @@ git checkout main
 git push origin main
 
 git remote -v
+
+# toglie un url
+git remote set-url --push upstream no_push_url
