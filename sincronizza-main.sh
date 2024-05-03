@@ -11,7 +11,10 @@ git fetch upstream
 git checkout main
 
 # Esegue il merge delle modifiche dal repository originale nel tuo branch principale (main)
-git merge upstream/main
+# DA EVITARE
+# git merge upstream/main
 
 # Pusha le modifiche sul tuo fork su GitHub
 git push origin main
+
+git remote -v
