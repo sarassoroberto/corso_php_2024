@@ -4,8 +4,38 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit42c9f863b9261e4491fa706324329494
+class ComposerStaticInit371987cc5c5423cac8da18d5f00d63c6
 {
+    public static $prefixLengthsPsr4 = array (
+        'T' => 
+        array (
+            'Test\\DevCoder\\Validator\\' => 24,
+        ),
+        'P' => 
+        array (
+            'Psr\\Http\\Message\\' => 17,
+        ),
+        'D' => 
+        array (
+            'DevCoder\\Validator\\' => 19,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Test\\DevCoder\\Validator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/devcoder-xyz/php-validator/tests',
+        ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'DevCoder\\Validator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/devcoder-xyz/php-validator/src',
+        ),
+    );
+
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
@@ -13,7 +43,9 @@ class ComposerStaticInit42c9f863b9261e4491fa706324329494
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit42c9f863b9261e4491fa706324329494::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit371987cc5c5423cac8da18d5f00d63c6::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit371987cc5c5423cac8da18d5f00d63c6::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit371987cc5c5423cac8da18d5f00d63c6::$classMap;
 
         }, null, ClassLoader::class);
     }
