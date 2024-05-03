@@ -15,7 +15,7 @@ git checkout main
 # git merge upstream/main
 
 # Pusha le modifiche sul tuo fork su GitHub
-git push origin main
+git push origin main # USARE QUESTO
 
 git remote -v
 

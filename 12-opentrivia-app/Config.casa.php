@@ -1,7 +1,8 @@
 <?php
 # Questi file non dovrebbero stare nel repository
 
-class Config {
+class Config
+{
 
     /** XAMPP local config */
     public const DB_USER = 'root';
