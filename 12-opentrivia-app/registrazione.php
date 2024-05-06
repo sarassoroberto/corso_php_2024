@@ -36,6 +36,7 @@ require_once "./view/header.php"
         ]);
 
         $result = $validation->validateArray($_POST);
+        // $validation->getData();
 
         if($result === true){
             $user = new User;

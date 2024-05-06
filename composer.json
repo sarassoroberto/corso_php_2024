@@ -1,0 +1,5 @@
+{
+    "require": {
+        "devcoder-xyz/php-validator": "^2.0"
+    }
+}
