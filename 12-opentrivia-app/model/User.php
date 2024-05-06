@@ -20,7 +20,7 @@ class User
     public static function factoryFromArray(array $data): User
     {
         $user = new self();
-        $user->user_id = trim($data['user_id']) ?: null;
+        $user->user_id = trim($data['user_id'] ?? "") ?: null;
         $user->nome = trim($data['nome']) ?: null;
         $user->cognome = trim($data['cognome']) ?: null;
         $user->email = trim($data['email']) ?: null;
@@ -30,12 +30,12 @@ class User
     public static function validateUserForRegistration($userData): Validation
     {
         $validation = new Validation([
-            'nome' => [(new StringLength())->min(3)],
-            'email' => [(new StringLength())->min(4), new Email()],
+            'nome' => [(new StringLength())->min(2)],
             'cognome' => [(new StringLength())->min(2)],
+            'email' => [(new StringLength())->min(4), new Email()],
             'password' => [(new StringLength())->min(8)]
         ]);
-        $validation->validateArray($userData);
+        // $validation->validateArray($userData);
         return $validation;
     }
 }

@@ -1,16 +1,18 @@
 <?php 
+use DevCoder\Validator\Assert\Email;
+use DevCoder\Validator\Assert\StringLength;
+use DevCoder\Validator\Validation;
+use service\form\FormService;
 include("vendor/autoload.php");
 include("autoload.php");
 use crud\UserCRUD;
-use DevCoder\Validator\Assert\Email;
-use DevCoder\Validator\Assert\NotNull;
-use DevCoder\Validator\Validation;
 use model\User;
 require_once "./view/header.php" 
 
 ?>
 
 <?php 
+
     
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
         echo "Benvenuto compila il form";
@@ -20,21 +22,33 @@ require_once "./view/header.php"
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo "controllo i dati e li salvo";
 
-    $validator = User::validateUserForRegistration($_POST);
-    $errors = $validator->getErrors();
-    $user_data = $validator->getData();
+    $validation = new Validation([
+        'nome' => [(new StringLength())->min(3)],
+        'cognome' => [(new StringLength())->min(3)],
+        'email' => [(new StringLength())->min(1), new Email()],
+        'password' => [(new StringLength())->min(8)],
+    ]);
 
 
-    
-    print_r($user_data);
-    
-    // var_dump($_POST);
-    // if($validator->isValid()){
-    //     $user = User::factoryFromArray($_POST);
-    //     $userCrud = new UserCRUD();
-    //     # Creazione dell'utente partendo dal form
-    //     $userCrud->create($user);
-    // }
+    if($validation->validateArray($_POST)){
+
+        $user = User::factoryFromArray($_POST);
+        $userCrud = new UserCRUD();
+        # Creazione dell'utente partendo dal form
+        $userCrud->create($user);
+
+    }else{
+
+        $errors = $validation->getErrors();
+        $user_data = $validation->getData();
+
+        $nome_value = FormService::getValue('nome', $user_data);
+        $nome_error = FormService::getError('nome', $errors);
+
+        // print_r($nome_value);
+        // print_r($nome_error);
+
+    }
 
         
     } 
@@ -47,7 +61,9 @@ require_once "./view/header.php"
                     <div class="mb-3">
                         <label class="form-label" for="nome">Nome</label>
                         <input class="form-control" type="text" name="nome" 
-                        value="<?= $user_data['nome'] ?? '' ?>" id="nome">
+                               value="" 
+                               id="nome"
+                               >
                         
 
                     </div>
@@ -63,7 +79,7 @@ require_once "./view/header.php"
                     <div class="mb-3">
                         <label class="form-label" for="password">Password</label>
                         <input class="form-control" type="password" name="password"  id="password">
-                            <?= implode(",",$errors['password']); ?>
+                           
                     </div>
                     <div class="mt-3">
                         <button class="btn btn-primary" type="submit">invia</button>
