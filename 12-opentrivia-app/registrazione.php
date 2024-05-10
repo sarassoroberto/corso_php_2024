@@ -1,4 +1,5 @@
 <?php 
+use service\autenticate\AutenticateService;
 session_start();
 require_once "vendor/autoload.php";
 require_once "autoload.php";
@@ -9,7 +10,7 @@ use DevCoder\Validator\Assert\Email;
 use DevCoder\Validator\Assert\StringLength;
 use DevCoder\Validator\Validation;
 use model\User;
-require_once "./view/header.php" 
+ 
 
 ?>
 
@@ -46,9 +47,9 @@ require_once "./view/header.php"
             $user->password = $_POST['password'];
 
             $userCrud->create($user); // 
+            AutenticateService::logIn($user->email,$user->password);
             header("Location: users_index.php");
-            // header("Location: http://google.com");
-            // $conn->prepare("SQL")
+
         }
         $errors = $validation->getErrors();
 
@@ -56,6 +57,8 @@ require_once "./view/header.php"
 
     } 
 ?>
+
+<?php require_once "./view/header.php"  ?>
 <div class="container">
         <div class="row">
             <div class="col"></div>

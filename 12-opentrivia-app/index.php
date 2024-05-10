@@ -8,6 +8,7 @@ require_once "vendor/autoload.php"; // autooload di composer
 require_once "autoload.php"; // Il nostro autoload
 
 
+
 if($_SERVER['REQUEST_METHOD']=="GET"){
  
     $errors = [];
@@ -37,9 +38,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $formData = $validation->getData();
     
             if($is_ok === true){
-               
-                    AutenticateService::logIn($formData['email'],$formData['password']);
-                
+                AutenticateService::logIn($formData['email'],$formData['password']);
+                header("Location: users_index.php");
             }
         } catch (\Throwable $th) {
             $errors['auth'] = $th->getMessage();
@@ -57,8 +57,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <div class="row">
         <div class="col"></div>
         <div class="col">
-            <form>
-                <div>Accesso negato </div>
+            <form action="index.php" method="POST">
+               
                 <div>
 
                     <label for="email" class="form-label">email</label>
@@ -67,7 +67,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 </div>
                 <div class="mt-3">
                     <label for="password" class="form-label">password</label>
-                    <input type="password" class="form-control" name="password" id="password">
+                    <input type="text" class="form-control" name="password" id="password">
                 </div>
                 <div class="mt-3">
                     <button class="btn btn-primary" type="submit">Accedi</button>

@@ -1,3 +1,8 @@
+<?php 
+use service\autenticate\AutenticateService;
+$is_auth = AutenticateService::isAutenticate();
+$user = AutenticateService::getAuthenticatedUser();
+?>
 <!DOCTYPE html>
 <html lang="it">
 
@@ -10,7 +15,13 @@
 </head>
 
 <body>
+    
     <header class="p-5 bg-primary text-center text-light">
         <h1 class="h3">Rispondituttogame</h1>
-    </header>
-    <main class="pt-5">
+        <?php if($is_auth) : ?>
+            <span><?= $user->nome." ".$user->cognome ?><span>
+            <span><a class="btn btn-outline-light" href="logout.php">logout<a></span>
+        <?php endif ?>
+            
+            </header>
+            <main class="pt-5">
