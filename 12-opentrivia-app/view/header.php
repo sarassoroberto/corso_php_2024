@@ -44,7 +44,7 @@ $user = AutenticateService::getAuthenticatedUser();
                     <li class="nav-item">
                         
                         <a class="nav-link active" aria-current="page" href="nuova_partita.php">Nuova Partita</a>
-                        </li>
+                    </li>
                 </ul>
             </div>
         </div>
