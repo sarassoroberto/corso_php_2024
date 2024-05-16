@@ -1,4 +1,11 @@
 <?php 
+use service\autenticate\AutenticateService;
+session_start();
+require_once "vendor/autoload.php";
+require_once "autoload.php";
+
+
+use crud\UserCRUD;
 use DevCoder\Validator\Assert\Email;
 use DevCoder\Validator\Assert\StringLength;
 use DevCoder\Validator\Validation;
@@ -7,7 +14,7 @@ include("vendor/autoload.php");
 include("autoload.php");
 use crud\UserCRUD;
 use model\User;
-require_once "./view/header.php" 
+ 
 
 ?>
 
@@ -29,16 +36,21 @@ require_once "./view/header.php"
         'password' => [(new StringLength())->min(8)],
     ]);
 
+        $result = $validation->validateArray($_POST);
+        // $validation->getData();
 
-    if($validation->validateArray($_POST)){
+        if($result === true){
+            $user = new User;
+            $user->email = $_POST['email'];
+            $user->nome = $_POST['nome'];
+            $user->cognome = $_POST['cognome'];
+            $user->password = $_POST['password'];
 
-        $user = User::factoryFromArray($_POST);
-        $userCrud = new UserCRUD();
-        # Creazione dell'utente partendo dal form
-        $userCrud->create($user);
+            $userCrud->create($user); // 
+            AutenticateService::logIn($user->email,$user->password);
+            header("Location: users_index.php");
 
-    }else{
-
+        }
         $errors = $validation->getErrors();
         $user_data = $validation->getData();
 
@@ -53,6 +65,8 @@ require_once "./view/header.php"
         
     } 
 ?>
+
+<?php require_once "./view/header.php"  ?>
 <div class="container">
         <div class="row">
             <div class="col"></div>
