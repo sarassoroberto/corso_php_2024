@@ -1,6 +1,5 @@
 <?php
-// service\autenticate
-// C:\xampp\htdocs\corso_php_2024\12-opentrivia-app\service\autenticate\AutenticateService.php
+
 namespace service\autenticate;
 
 

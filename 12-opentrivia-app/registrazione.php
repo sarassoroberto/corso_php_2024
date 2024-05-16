@@ -1,4 +1,5 @@
 <?php 
+use crud\UserCRUD;
 use service\autenticate\AutenticateService;
 session_start();
 require_once "vendor/autoload.php";
@@ -17,7 +18,7 @@ use model\User;
 
 <?php 
 
-    
+    $userCrud = new UserCRUD();
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
         echo "Benvenuto compila il form";
         $user_data = [];
