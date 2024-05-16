@@ -4,15 +4,12 @@ session_start();
 require_once "vendor/autoload.php";
 require_once "autoload.php";
 
-
-use crud\UserCRUD;
 use DevCoder\Validator\Assert\Email;
 use DevCoder\Validator\Assert\StringLength;
 use DevCoder\Validator\Validation;
 use service\form\FormService;
-include("vendor/autoload.php");
-include("autoload.php");
-use crud\UserCRUD;
+
+
 use model\User;
  
 
@@ -29,16 +26,15 @@ use model\User;
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo "controllo i dati e li salvo";
 
-    $validation = new Validation([
-        'nome' => [(new StringLength())->min(3)],
-        'cognome' => [(new StringLength())->min(3)],
-        'email' => [(new StringLength())->min(1), new Email()],
-        'password' => [(new StringLength())->min(8)],
-    ]);
+        $validation = new Validation([
+            'nome' => [(new StringLength())->min(3)],
+            'cognome' => [(new StringLength())->min(3)],
+            'email' => [(new StringLength())->min(1), new Email()],
+            'password' => [(new StringLength())->min(8)],
+        ]);
 
         $result = $validation->validateArray($_POST);
-        // $validation->getData();
-
+     
         if($result === true){
             $user = new User;
             $user->email = $_POST['email'];
@@ -57,13 +53,11 @@ use model\User;
         $nome_value = FormService::getValue('nome', $user_data);
         $nome_error = FormService::getError('nome', $errors);
 
-        // print_r($nome_value);
-        // print_r($nome_error);
 
     }
 
         
-    } 
+    
 ?>
 
 <?php require_once "./view/header.php"  ?>
